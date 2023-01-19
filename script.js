@@ -1,8 +1,9 @@
-function createBubbleChart(pokemon) {
+function createBubbleChart(error, pokemon) {
   var totals = pokemon.map(function (pokemon) {
     return +pokemon.total;
   });
   var totalExtent = d3.extent(totals);
+
   var types = d3.set(
     pokemon.map(function (pokemon) {
       return pokemon.type1;

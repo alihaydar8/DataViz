@@ -1,5 +1,5 @@
-html, body {
-  margin: 10px;
+html,
+body {
   padding: 0;
   font-family: sans-serif;
 }
@@ -17,7 +17,6 @@ html, body {
   position: relative;
   justify-self: center;
   justify-content: center;
-
 }
 
 input[type="radio"] {
