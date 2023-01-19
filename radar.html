@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous" />
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3plus-plot@1"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous" />
+    <title>Radar Chart</title>
+  </head>
+  <body>
+    <ul class="nav nav-tabs" style="background-color: gray">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Bubble Chart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="radar.html">Radar Chart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pie.html">Pie Chart</a>
+      </li>
+    </ul>
+    <br />
+    <center>
+      <h1>Radar Chart</h1>
+      <p>
+        Représentation en radar les top 10 selon le nombre : total, Hit Points,
+        Attack, Defense,Special Attack,Special Defense,Speed
+      </p>
+      <div id="chart"></div>
+
+      <script type="text/javascript">
+        const URL = "Data/pokemon.csv";
+        let pekemon_data;
+
+        d3.csv(URL, (error, data) => {
+          if (error) throw error;
+          pekemon_data = data;
+          console.log(pekemon_data);
+          let myData = [];
+          const bigTotal = pekemon_data
+            .sort(
+              (PokemonA, PokemonB) =>
+                parseInt(PokemonB["total"]) - parseInt(PokemonA["total"])
+            )
+            .slice(0, 10);
+          console.log(bigTotal);
+          console.log(pekemon_data.filter((d) => d.type2 !== ""));
+          bigTotal.forEach((pokemon) => {
+            myData.push({
+              id: pokemon["name"],
+              axis: "Hit Points",
+              number: parseInt(pokemon["HP"]),
+            });
+            myData.push({
+              id: pokemon["name"],
+              axis: "Attack",
+              number: Number(pokemon["attack"]),
+            });
+            myData.push({
+              id: pokemon["name"],
+              axis: "Defense",
+              number: Number(pokemon["defense"]),
+            });
+            myData.push({
+              id: pokemon["name"],
+              axis: "Special Attack",
+              number: Number(pokemon["spAtk"]),
+            });
+            myData.push({
+              id: pokemon["name"],
+              axis: "Special Defense",
+              number: Number(pokemon["spDef"]),
+            });
+            myData.push({
+              id: pokemon["name"],
+              axis: "Speed",
+              number: Number(pokemon["speed"]),
+            });
+          });
+
+          new d3plus.Radar()
+            .config({
+              data: myData,
+              groupBy: "id",
+              metric: "axis",
+              value: "number",
+            })
+            .render();
+        });
+      </script>
+    </center>
+  </body>
+</html>
