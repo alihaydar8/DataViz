@@ -1,12 +1,8 @@
-function createBubbleChart(error, pokemon) {
+function createBubbleChart(pokemon) {
   var totals = pokemon.map(function (pokemon) {
     return +pokemon.total;
   });
-  var meantotal = d3.mean(totals),
-    totalExtent = d3.extent(totals),
-    totalscaleX,
-    totalscaleY;
-
+  var totalExtent = d3.extent(totals);
   var types = d3.set(
     pokemon.map(function (pokemon) {
       return pokemon.type1;
@@ -16,8 +12,8 @@ function createBubbleChart(error, pokemon) {
     .scaleOrdinal(d3.schemeCategory20)
     .domain(types.values());
 
-  var width = 1900,
-    height = 1000;
+  var width = 1800,
+    height = 1100;
   var svg,
     circles,
     circleSize = { min: 14, max: 22 };
