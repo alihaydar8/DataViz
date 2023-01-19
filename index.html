@@ -13,7 +13,7 @@
       rel="stylesheet"
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous" />
-    <title>DataVisual</title>
+    <title>DataViz</title>
   </head>
   <body>
     <ul class="nav nav-tabs" style="background-color: rgb(190, 187, 187)">
@@ -37,7 +37,7 @@
       </p>
     </center>
     <div id="controls">
-      <span>
+      <span style="margin-left: 10px">
         filters :&nbsp;
         <label
           ><input
@@ -65,7 +65,7 @@
           Total-score</label
         >
       </span>
-      <span>
+      <span style="margin-right: 10px">
         Afficher : &nbsp;
         <label
           ><input id="colors" type="radio" name="fill" value="colors" checked />
@@ -77,10 +77,17 @@
         >
       </span>
     </div>
-    <div id="pokemon-info"></div>
+    <div
+      id="pokemon-info"
+      style="
+        height: 10px;
+        justify-content: center;
+        text-align: center;
+        font-weight: bold;
+      "></div>
     <br />
     <br />
-    <div id="bubble-chart"></div>
+    <div id="bubble-chart" style="margin: 15px"></div>
 
     <script>
       d3.queue().defer(d3.csv, "Data/pokemon.csv").await(createBubbleChart);
