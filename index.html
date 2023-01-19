@@ -16,7 +16,7 @@
     <title>DataVisual</title>
   </head>
   <body>
-    <ul class="nav nav-tabs" style="background-color: gray">
+    <ul class="nav nav-tabs" style="background-color: rgb(190, 187, 187)">
       <li class="nav-item">
         <a class="nav-link active" href="index.html">Bubble Chart</a>
       </li>
@@ -27,58 +27,58 @@
         <a class="nav-link" href="pie.html">Pie Chart</a>
       </li>
     </ul>
+
     <br />
     <center>
       <h1>Bubble Chart</h1>
       <p>
-        Représentation en radar les top 10 selon le nombre : total, Hit Points,
-        Attack, Defense,Special Attack,Special Defense,Speed
+        Représentation en bubble les pokemons selon selon les differents filtres
+        et option d'affichage,
       </p>
     </center>
     <div id="controls">
       <span>
+        filters :&nbsp;
         <label
           ><input
             id="combine"
             type="radio"
             name="grouping"
             value="combine"
-            checked />Combine</label
+            checked />
+          Combine</label
         >
         <label
           ><input
             id="categories"
             type="radio"
             name="grouping"
-            value="categories" />Categories</label
+            value="categories" />
+          Categories</label
         >
         <label
           ><input
             id="total-score"
             type="radio"
             name="grouping"
-            value="total-score" />total-score</label
+            value="total-score" />
+          Total-score</label
         >
       </span>
       <span>
+        Afficher : &nbsp;
         <label
-          ><input
-            id="colors"
-            type="radio"
-            name="fill"
-            value="colors"
-            checked />Colors</label
+          ><input id="colors" type="radio" name="fill" value="colors" checked />
+          Colors</label
         >
         <label
-          ><input
-            id="images"
-            type="radio"
-            name="fill"
-            value="images" />images</label
+          ><input id="images" type="radio" name="fill" value="images" />
+          Images</label
         >
       </span>
     </div>
     <div id="pokemon-info"></div>
+    <br />
     <br />
     <div id="bubble-chart"></div>
 
