@@ -1,36 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="style.css" rel="stylesheet">
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="https://d3js.org/d3-queue.v3.min.js"></script>
-  <script src="script.js"></script>
-  <title>D3 Country Bubble Chart</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+    <script src="script.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous" />
+    <title>DataVisual</title>
+  </head>
+  <body>
+    <ul class="nav nav-tabs" style="background-color: gray">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html">Bubble Chart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="radar.html">Radar Chart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pie.html">Pie Chart</a>
+      </li>
+    </ul>
+    <br />
+    <center>
+      <h1>Bubble Chart</h1>
+      <p>
+        Représentation en radar les top 10 selon le nombre : total, Hit Points,
+        Attack, Defense,Special Attack,Special Defense,Speed
+      </p>
+    </center>
+    <div id="controls">
+      <span>
+        <label
+          ><input
+            id="combine"
+            type="radio"
+            name="grouping"
+            value="combine"
+            checked />Combine</label
+        >
+        <label
+          ><input
+            id="categories"
+            type="radio"
+            name="grouping"
+            value="categories" />Categories</label
+        >
+        <label
+          ><input
+            id="total-score"
+            type="radio"
+            name="grouping"
+            value="total-score" />total-score</label
+        >
+      </span>
+      <span>
+        <label
+          ><input
+            id="colors"
+            type="radio"
+            name="fill"
+            value="colors"
+            checked />Colors</label
+        >
+        <label
+          ><input
+            id="images"
+            type="radio"
+            name="fill"
+            value="images" />images</label
+        >
+      </span>
+    </div>
+    <div id="pokemon-info"></div>
+    <br />
+    <div id="bubble-chart"></div>
 
-<div id="controls">
-  <span>
-    <label><input id="combine" type="radio" name="grouping" value="combine" checked>Combine</label>
-    <label><input id="categories" type="radio" name="grouping" value="categories">Categories</label>
-    <label><input id="total-score" type="radio" name="grouping" value="total-score">total-score</label>
-  </span>
-  <span>
-    <label><input id="colors" type="radio" name="fill" value="colors" checked>Colors</label>
-    <label><input id="images" type="radio" name="fill" value="images">images</label>
-  </span>
-</div>
-<div id="pokemon-info"></div>
-<div id="bubble-chart"></div>
-
-<script>
-  d3.queue()
-    .defer(d3.csv, "pokemon.csv")
-    .await(createBubbleChart);
-</script>
-
-</body>
+    <script>
+      d3.queue().defer(d3.csv, "Data/pokemon.csv").await(createBubbleChart);
+    </script>
+  </body>
 </html>
