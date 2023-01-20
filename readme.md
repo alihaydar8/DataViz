@@ -2,6 +2,7 @@
 ## Description
 Ce projet a pour but de créer une visualisation des Pokémon à partir de deux jeux de données provenant de Kaggle. Il est divisé en trois parties :
 
+### Github Pages : https://alihaydar8.github.io/DataViz/index.html
 
 ## Partie 1 : Bubble Chart
 
@@ -12,16 +13,16 @@ La première partie de ce projet utilise un graphique en bulles pour visualiser 
 
 Pour utiliser cette partie du projet, veuillez vous référer à la fonction createBubbleChart() dans le code source.
 
-disponible à l'adresse suivante: https://alihaydar8.github.io/DataViz/index.html
+disponible à l'adresse suivante: https://alihaydar8.github.io/DataViz/bubble&imageChart.html
 
 ## Partie 2 : Radar Chart
 
 
-disponible à l'adresse suivante: https://alihaydar8.github.io/DataViz/radar.html
+disponible à l'adresse suivante: https://alihaydar8.github.io/DataViz/radarChart.html
 
 ## Partie 3 : Pie Chart
 
-disponible à l'adresse suivante: https://alihaydar8.github.io/DataViz/pie.html
+disponible à l'adresse suivante: https://alihaydar8.github.io/DataViz/pieChart.html
 
 
 
