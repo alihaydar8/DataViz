@@ -44,7 +44,55 @@ disponible à l'adresse suivante: https://alihaydar8.github.io/DataViz/pie.html
 - Speed: détermine lequel des pokémons attaque en premier chaque tour.
   
 ### type 
-  - ![image](https://www.pokepedia.fr/images/5/50/Miniature_Type_T%C3%A9racristal_Combat_EV.png)
+  - <img alt="" src="https://www.pokepedia.fr/images/4/40/Miniature_Type_T%C3%A9racristal_Normal_EV.png" width="60" height="20" /> 
+    Les Pokémon de type normal sont souvent des Pokémon de base qui ont peu d'affinités élémentaires.
+
+  - <img alt="" src="https://www.pokepedia.fr/images/5/50/Miniature_Type_T%C3%A9racristal_Combat_EV.png" width="60" height="20" />
+    Les Pokémon de type combat sont souvent forts physiquement et
+          ont des attaques de type combat.
+
+  - <img alt="" src="https://www.pokepedia.fr/images/2/22/Miniature_Type_T%C3%A9racristal_Vol_EV.png" width="60" height="20" />
+    Les Pokémon de type vol peuvent voler et ont souvent des
+          attaques aériennes.
+
+  - <img alt="" src="https://www.pokepedia.fr/images/5/5e/Miniature_Type_T%C3%A9racristal_Poison_EV.png" width="60" height="20" />
+    Les Pokémon de type poison peuvent infliger des dégâts à
+          leurs adversaires et ont souvent des attaques de type poison.
+
+  - <img alt="" src="https://www.pokepedia.fr/images/9/9f/Miniature_Type_T%C3%A9racristal_Sol_EV.png" width="60" height="20" />
+    Les Pokémon de type sol sont souvent forts physiquement et ont
+          des attaques de type sol.
+  - <img alt="" src="https://www.pokepedia.fr/images/1/1e/Miniature_Type_T%C3%A9racristal_Feu_EV.png" width="60" height="20" />
+    Les Pokémon de type feu ont des attaques de type feu et sont
+          souvent forts contre les Pokémon de type plante.
+  - <img alt="" src="https://www.pokepedia.fr/images/1/19/Miniature_Type_T%C3%A9racristal_Eau_EV.png" width="60" height="20" />
+    Les Pokémon de type eau ont des attaques de type eau et sont
+          souvent forts contre les Pokémon de type feu.
+  - <img alt="" src="https://www.pokepedia.fr/images/3/39/Miniature_Type_T%C3%A9racristal_Plante_EV.png" width="60" height="20" />
+    Les Pokémon de type plante ont des attaques de type plante et
+          sont souvent forts contre les Pokémon de type eau.
+  - <img alt="" src="https://www.pokepedia.fr/images/c/c2/Miniature_Type_T%C3%A9racristal_%C3%89lectrik_EV.png"  width="60" height="20" />
+    Les Pokémon de type électrique ont des attaques de type
+          électrique et sont souvent forts contre les Pokémon de type eau.
+  - <img alt="" src="https://www.pokepedia.fr/images/d/dc/Miniature_Type_T%C3%A9racristal_Psy_EV.png"  width="60" height="20" />
+    Les Pokémon de type psychique ont des attaques de type
+          psychique et sont souvent forts contre les Pokémon de type combat.
+  - <img alt="" src="https://www.pokepedia.fr/images/c/c4/Miniature_Type_T%C3%A9racristal_Glace_EV.png"  width="60" height="20" />
+    Les Pokémon de type glace ont des attaques de type glace et
+          sont souvent forts contre les Pokémon de type dragon.
+  - <img alt="" src="https://www.pokepedia.fr/images/1/1d/Miniature_Type_T%C3%A9racristal_Dragon_EV.png" width="60" height="20" />
+    Les Pokémon de type dragon ont des attaques de type dragon et
+          sont souvent forts contre les Pokémon de type dragon.
+  - <img alt="" src="https://www.pokepedia.fr/images/e/e4/Miniature_Type_T%C3%A9racristal_T%C3%A9n%C3%A8bres_EV.png" width="60" height="20" />
+    Les Pokémon de type ténèbres ont des attaques de type
+          ténèbres et sont souvent forts contre les Pokémon de type psychique.
+  - <img alt="" src="https://www.pokepedia.fr/images/f/f3/Miniature_Type_T%C3%A9racristal_Acier_EV.png" width="60" height="20" />
+    Les Pokémon de type acier ont des attaques de type acier et
+          sont souvent forts contre les Pokémon de type dragon.
+  - <img alt="" src="https://www.pokepedia.fr/images/9/9a/Miniature_Type_T%C3%A9racristal_F%C3%A9e_EV.png" width="60" height="20" />
+    Les Pokémon de type fée ont des attaques de type fée et sont
+          souvent forts contre les Pokémon de type dragon.
+
 
 # Utilisation
 Ce projet a été réalisé dans le contexte d'un module de dataviz à l'école.
