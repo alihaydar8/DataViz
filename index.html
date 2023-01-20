@@ -1,96 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="style.css" rel="stylesheet" />
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
-    <script src="script.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous" />
-    <title>DataViz</title>
+    <title>Visualisation des données sur les Pokémon</title>
   </head>
   <body>
     <ul class="nav nav-tabs" style="background-color: rgb(190, 187, 187)">
       <li class="nav-item">
-        <a class="nav-link active" href="index.html">Bubble Chart</a>
+        <a class="nav-link active" href="index.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="radar.html">Radar Chart</a>
+        <a class="nav-link" href="bubble&imageChart.html"
+          >Bubble & Image Chart</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pie.html">Pie Chart</a>
+        <a class="nav-link" href="radarChart.html">Radar Chart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pieChart.html">Pie Chart</a>
       </li>
     </ul>
 
-    <br />
-    <center>
-      <h1>Bubble Chart</h1>
-      <p>
-        Représentation en bubble les pokemons selon selon les differents filtres
-        et option d'affichage,
-      </p>
-    </center>
-    <div id="controls">
-      <span style="margin-left: 10px">
-        filters :&nbsp;
-        <label
-          ><input
-            id="combine"
-            type="radio"
-            name="grouping"
-            value="combine"
-            checked />
-          Combine</label
-        >
-        <label
-          ><input
-            id="categories"
-            type="radio"
-            name="grouping"
-            value="categories" />
-          Categories</label
-        >
-        <label
-          ><input
-            id="total-score"
-            type="radio"
-            name="grouping"
-            value="total-score" />
-          Total-score</label
-        >
-      </span>
-      <span style="margin-right: 10px">
-        Afficher : &nbsp;
-        <label
-          ><input id="colors" type="radio" name="fill" value="colors" checked />
-          Colors</label
-        >
-        <label
-          ><input id="images" type="radio" name="fill" value="images" />
-          Images</label
-        >
-      </span>
-    </div>
-    <div
-      id="pokemon-info"
-      style="
-        height: 10px;
-        justify-content: center;
-        text-align: center;
-        font-weight: bold;
-      "></div>
-    <br />
-    <br />
-    <div id="bubble-chart" style="margin: 15px"></div>
+    <div class="container">
+      <h1 class="center" style="display: flex; justify-content: center">
+        Visualisation des données sur les Pokémon
+      </h1>
+      <img
+        src="data/imgPokemon.png"
+        alt="Tous les Pokémon"
+        style="display: flex; margin: auto; width: 80%" />
+      <br />
 
-    <script>
-      d3.queue().defer(d3.csv, "Data/pokemon.csv").await(createBubbleChart);
-    </script>
+      <br /><br />
+      <h4 style="display: flex; justify-content: center">Fan des Pokemons ?</h4>
+      <h4 style="display: flex; justify-content: center">
+        Vous Connaissez tous les pokemons et leurs categories ?
+      </h4>
+      <h4 style="display: flex; justify-content: center">
+        Regardez ce que nous avons trouvé pour vous en fonction des catégories
+        et des meilleures notes de force.
+      </h4>
+      <br />
+      <h2>Definition</h2>
+      <p>
+        Les Pokémon sont des créatures que l'on peut attraper et entraîner. Ils
+        sont classés en différents types tels que:
+      </p>
+      <ul>
+        <li>
+          <img
+            alt="Vol"
+            src=""
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Normal - Les Pokémon de type normal sont souvent des Pokémon de base
+          qui ont peu d'affinités élémentaires.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src="https://www.pokepedia.fr/images/5/50/Miniature_Type_T%C3%A9racristal_Combat_EV.png"
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Combat - Les Pokémon de type combat sont souvent forts physiquement et
+          ont des attaques de type combat.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src="https://www.pokepedia.fr/images/2/22/Miniature_Type_T%C3%A9racristal_Vol_EV.png"
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Vol - Les Pokémon de type vol peuvent voler et ont souvent des
+          attaques aériennes.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src=""
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Poison - Les Pokémon de type poison peuvent infliger des dégâts à
+          leurs adversaires et ont souvent des attaques de type poison.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src=""
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Sol - Les Pokémon de type sol sont souvent forts physiquement et ont
+          des attaques de type sol.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src=""
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Feu - Les Pokémon de type feu ont des attaques de type feu et sont
+          souvent forts contre les Pokémon de type plante.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src=""
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Eau - Les Pokémon de type eau ont des attaques de type eau et sont
+          souvent forts contre les Pokémon de type feu.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src=""
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Plante - Les Pokémon de type plante ont des attaques de type plante et
+          sont souvent forts contre les Pokémon de type eau.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src=""
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Électrik - Les Pokémon de type électrique ont des attaques de type
+          électrique et sont souvent forts contre les Pokémon de type eau.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src=""
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Psychique - Les Pokémon de type psychique ont des attaques de type
+          psychique et sont souvent forts contre les Pokémon de type combat.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src=""
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Glace - Les Pokémon de type glace ont des attaques de type glace et
+          sont souvent forts contre les Pokémon de type dragon.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src="https://www.pokepedia.fr/images/1/1d/Miniature_Type_T%C3%A9racristal_Dragon_EV.png"
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Dragon - Les Pokémon de type dragon ont des attaques de type dragon et
+          sont souvent forts contre les Pokémon de type dragon.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src=""
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Ténèbres - Les Pokémon de type ténèbres ont des attaques de type
+          ténèbres et sont souvent forts contre les Pokémon de type psychique.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src="https://www.pokepedia.fr/images/f/f3/Miniature_Type_T%C3%A9racristal_Acier_EV.png"
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Acier - Les Pokémon de type acier ont des attaques de type acier et
+          sont souvent forts contre les Pokémon de type dragon.
+        </li>
+        <li>
+          <img
+            alt="Vol"
+            src=""
+            decoding="async"
+            width="60"
+            height="20"
+            class="type" />
+          Fée - Les Pokémon de type fée ont des attaques de type fée et sont
+          souvent forts contre les Pokémon de type dragon.
+        </li>
+      </ul>
+      <p>
+        Chacun de ces types de Pokémon ont des forces et des faiblesses
+        spécifiques envers les autres types de Pokémon, qui influencent les
+        combats entre eux. Il existe également des Pokémon qui ont plusieurs
+        types. Au total, il existe plus de 800 espèces différentes de Pokémon,
+        chacun ayant ses propres caractéristiques et capacités uniques. Les
+        dresseurs peuvent attraper et collectionner autant de Pokémon qu'ils le
+        souhaitent puis affronter d'autres dresseurs pour voir dont les Pokémon
+        sont les plus forts. Il est important pour les dresseurs de connaître
+        les types de leurs Pokémon pour pouvoir les utiliser efficacement dans
+        les combats et les entraîner de manière optimale.
+      </p>
+
+      <h2>Description</h2>
+      Dans ce projet nous faisant une analyse comparatif entre les pokemons
+      dominant selon leurs scores total pour proposer à la fin une selction des
+      Top 10 selon défférent critéres: Hit Points, Attack, Defense, Special
+      Attack, Special Defense, Speed
+      <br /><br />
+      <strong>DataSet : </strong>
+      <ul>
+        <li>#: ID for each pokemon</li>
+        <li>Name: Name of each pokemon</li>
+        <li>
+          Type 1: Each pokemon has a type, this determines weakness/resistance
+          to attacks
+        </li>
+        <li>Type 2: Some pokemon are dual type and have 2</li>
+
+        <li>
+          Total: sum of all stats that come after this, a general guide to how
+          strong a pokemon...
+        </li>
+        <li>
+          HP: hit points, or health, defines how much damage a pokemon can
+          withstand before fainting
+        </li>
+        <li>
+          Attack: the base modifier for normal attacks (eg. Scratch, Punch)
+        </li>
+        <li>Defense: the base damage resistance against normal attacks</li>
+        <li>
+          SP Atk: special attack, the base modifier for special attacks (e.g.
+          fire blast, bubble beam)
+        </li>
+        <li>SP Def: the base damage resistance against special attacks</li>
+        <li>Speed: determines which pokemon attacks first each round</li>
+      </ul>
+      <br /><br />
+
+      <h2>Nettoyage des données</h2>
+      <img
+        src="/data/data-cleansing.jpg"
+        style="display: flex; margin: auto; width: 30%; height: 30%" />
+      <br /><br />
+      <p>
+        Nous avons eu besoin de nettoyer les données extraite sur kaggle pour
+        correspondre a nos besoins d'étude
+      </p>
+      <p>Pour cela nous avons :</p>
+      <ul>
+        <li>Supprimer les pokemon qui ont 0 de types2</li>
+        <li>ajouter les images des pokemons</li>
+      </ul>
+
+      <h2>Difficultés rencontrées</h2>
+
+      <p>
+        Nous avons dû modifier les noms de certaines images pour qu'ils
+        correspondent aux noms des Pokémon dans notre jeu de données principal
+        afin de pouvoir mapper les deux bases de données et obtenir une
+        visualisation claire.
+      </p>
+      <br />
+
+      <h2>Prototypes de visualisation utilisé</h2>
+      <p>
+        Nous avons utiliser D3js, D3plus, une bibliothèque javascript qui étend
+        D3.js pour permettre des visualisations rapides, simple et
+        représentatif.
+      </p>
+      <ul>
+        <li>BubbleChart</li>
+        <li>Radar</li>
+        <li>PieChart</li>
+      </ul>
+
+      <h2>Membres de l'équipe</h2>
+      <ul>
+        <li>AIT EL DJOUDI Karim</li>
+        <li>HAIDAR Ali</li>
+      </ul>
+      <h2>Liens important</h2>
+      <ul>
+        <li>
+          <a href="   https://www.kaggle.com/datasets/abcsds/pokemon">
+            dataset csv in kaggle
+          </a>
+        </li>
+        <li>
+          <a
+            href="  https://www.kaggle.com/datasets/vishalsubbiah/pokemon-images-and-types">
+            dataset images in kaggle
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/balithabib/projet_dataviz">
+            Dépôt GitHub(data, images, code)
+          </a>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

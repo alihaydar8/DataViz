@@ -325,7 +325,7 @@ function createBubbleChart(error, pokemon) {
       // slice: scale the image to fill the circle
       .attr("preserveAspectRatio", "xMidYMid slice")
       .attr("xlink:href", function (d) {
-        return "images/" + d.name.toLocaleLowerCase() + ".png";
+        return "data/images/" + d.name.toLocaleLowerCase() + ".png";
       });
   }
 

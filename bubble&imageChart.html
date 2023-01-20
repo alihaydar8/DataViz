@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+    <script src="js/script.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous" />
+    <title>DataViz</title>
+  </head>
+  <body>
+    <ul class="nav nav-tabs" style="background-color: rgb(190, 187, 187)">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="bubble&imageChart.html"
+          >Bubble & Image Chart</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="radarChart.html">Radar Chart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pieChart.html">Pie Chart</a>
+      </li>
+    </ul>
+
+    <br />
+    <center>
+      <h1>Bubble Chart</h1>
+      <p>
+        Représentation en bubble les pokemons selon selon les differents filtres
+        et option d'affichage,
+      </p>
+    </center>
+    <div id="controls">
+      <span style="margin-left: 10px">
+        filters :&nbsp;
+        <label
+          ><input
+            id="combine"
+            type="radio"
+            name="grouping"
+            value="combine"
+            checked />
+          Combine</label
+        >
+        <label
+          ><input
+            id="categories"
+            type="radio"
+            name="grouping"
+            value="categories" />
+          Categories</label
+        >
+        <label
+          ><input
+            id="total-score"
+            type="radio"
+            name="grouping"
+            value="total-score" />
+          Total-score</label
+        >
+      </span>
+      <span style="margin-right: 10px">
+        Afficher : &nbsp;
+        <label
+          ><input id="colors" type="radio" name="fill" value="colors" checked />
+          Colors</label
+        >
+        <label
+          ><input id="images" type="radio" name="fill" value="images" />
+          Images</label
+        >
+      </span>
+    </div>
+    <div
+      id="pokemon-info"
+      style="
+        height: 10px;
+        justify-content: center;
+        text-align: center;
+        font-weight: bold;
+      "></div>
+    <br />
+    <br />
+    <div id="bubble-chart" style="margin: 15px"></div>
+
+    <script>
+      d3.queue().defer(d3.csv, "data/pokemon.csv").await(createBubbleChart);
+    </script>
+  </body>
+</html>
